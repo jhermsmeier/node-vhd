@@ -19,7 +19,7 @@
   },
   
   "dependencies": {
-    
+    "fabl": "latest"
   },
   
   "devDependencies": {
