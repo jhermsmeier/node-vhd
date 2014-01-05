@@ -1,4 +1,6 @@
 # VHD - Virtual Hard Disk
+[![build status](https://secure.travis-ci.org/jhermsmeier/node-vhd.png)](http://travis-ci.org/jhermsmeier/node-vhd)
+[![NPM version](https://badge.fury.io/js/vhd.png)](https://npmjs.org/vhd)
 
 From [Wikipedia](https://en.wikipedia.org/wiki/VHD_(file_format))
 
