@@ -4,7 +4,7 @@
   "version": "0.1.0",
   "license": "MIT",
   "description": "Microsoft's Virtual Hard Disk (VHD) Format",
-  "kewords": [ "vhd", "virtual", "hard", "disk" ],
+  "keywords": [ "vhd", "virtual", "hard", "disk" ],
   
   "author": {
     "name": "Jonas Hermsmeier",
