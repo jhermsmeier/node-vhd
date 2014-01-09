@@ -19,7 +19,10 @@
   },
   
   "dependencies": {
-    "fabl": "latest"
+    "fabl": "~0.6.0",
+    "chs": "~0.1.0",
+    "int64-native": "~0.2.0",
+    "buffer-crc32": "~0.2.1"
   },
   
   "devDependencies": {
