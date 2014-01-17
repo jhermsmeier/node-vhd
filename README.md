@@ -34,3 +34,44 @@ All virtual disk types have a minimum size of 3 MB.
 
 The VHD format has a built-in limitation of just under 2 TiB (2040 GiB) for the size of any dynamic or differencing VHDs. This is due to a sector offset table that only allows for the maximum of a 32-bit quantity - Which fits our JavaScript environment perfectly, since we can't work with 64 bit integers natively.
 
+
+## Usage
+
+```javascript
+var VHD = require( 'vhd' )
+```
+
+#### Fixed size VHD
+
+```javascript
+var fixed = new VHD.Fixed( './path/to/image.vhd' )
+```
+
+```javascript
+fixed.open( function( error ) {
+  if( error ) {
+    // Obviously, something went wrong...
+  } else {
+    // Ready to read/write to/from image
+  }
+})
+```
+
+```javascript
+fixed.read( offset, length, function( error, bytesRead, buffer ) {
+  // ...
+})
+```
+
+```javascript
+fixed.write( buffer, offset, function( error, bytesWritten, buffer ) {
+  // ...
+})
+```
+
+```javascript
+fixed.close( function( error ) {
+  // ...
+})
+```
+
