@@ -1,6 +1,7 @@
 # VHD - Virtual Hard Disk
-[![build status](https://secure.travis-ci.org/jhermsmeier/node-vhd.png)](http://travis-ci.org/jhermsmeier/node-vhd)
-[![NPM version](https://badge.fury.io/js/vhd.png)](https://npmjs.org/vhd)
+[![npm](http://img.shields.io/npm/v/vhd.svg?style=flat)](https://npmjs.org/vhd)
+[![npm downloads](http://img.shields.io/npm/dm/vhd.svg?style=flat)](https://npmjs.org/vhd)
+[![build status](http://img.shields.io/travis/jhermsmeier/node-vhd.svg?style=flat)](https://travis-ci.org/jhermsmeier/node-vhd)
 
 
 From [Wikipedia's VHD article]
