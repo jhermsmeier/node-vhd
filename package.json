@@ -1,23 +1,19 @@
 {
-  
   "name": "vhd",
   "version": "0.1.0",
   "license": "MIT",
   "description": "Microsoft's Virtual Hard Disk (VHD) Format",
-  "keywords": [ "vhd", "virtual", "hard", "disk" ],
-  
-  "author": {
-    "name": "Jonas Hermsmeier",
-    "email": "jhermsmeier@gmail.com",
-    "url": "https://github.com/jhermsmeier"
-  },
-  
+  "keywords": [
+    "vhd",
+    "virtual",
+    "hard",
+    "disk"
+  ],
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://github.com/jhermsmeier)",
   "main": "lib/vhd.js",
-  
   "scripts": {
     "test": "node node_modules/mocha/bin/mocha"
   },
-  
   "dependencies": {
     "fabl": "~0.6.0",
     "chs": "~0.1.0",
@@ -26,18 +22,15 @@
     "async-emitter": "~1.5.1",
     "async": "~0.2.9"
   },
-  
   "devDependencies": {
     "mocha": ""
   },
-  
   "repository": {
     "type": "git",
     "url": "https://github.com/jhermsmeier/node-vhd.git"
   },
-  
   "bugs": {
     "url": "https://github.com/jhermsmeier/node-vhd/issues"
-  }
-  
+  },
+  "homepage": "https://github.com/jhermsmeier/node-vhd"
 }
