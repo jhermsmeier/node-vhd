@@ -1,4 +1,3 @@
-
 ## License (MIT)
 
 Copyright (c) 2014 [Jonas Hermsmeier](http://jhermsmeier.de)
