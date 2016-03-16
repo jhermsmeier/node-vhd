@@ -7,9 +7,3 @@ branches:
     - master
 sudo: false
 script: npm test
-addons:
-  apt:
-    sources:
-    - ubuntu-toolchain-r-test
-    packages:
-    - g++-5
