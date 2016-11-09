@@ -1,7 +1,7 @@
 # VHD - Virtual Hard Disk
-[![npm](https://img.shields.io/npm/v/vhd.svg?style=flat-square)](https://npmjs.com/vhd)
-[![npm](https://img.shields.io/npm/l/vhd.svg?style=flat-square)](https://npmjs.com/vhd)
-[![npm downloads](https://img.shields.io/npm/dm/vhd.svg?style=flat-square)](https://npmjs.com/vhd)
+[![npm](https://img.shields.io/npm/v/vhd.svg?style=flat-square)](https://npmjs.com/package/vhd)
+[![npm](https://img.shields.io/npm/l/vhd.svg?style=flat-square)](https://npmjs.com/package/vhd)
+[![npm downloads](https://img.shields.io/npm/dm/vhd.svg?style=flat-square)](https://npmjs.com/package/vhd)
 [![build status](https://img.shields.io/travis/jhermsmeier/node-vhd.svg?style=flat-square)](https://travis-ci.org/jhermsmeier/node-vhd)
 
 
@@ -17,7 +17,7 @@ From [Wikipedia's VHD article]
 ## Install via [npm](https://npmjs.org)
 
 ```sh
-$ npm install vhd
+$ npm install --save vhd
 ```
 
 
