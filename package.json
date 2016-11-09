@@ -1,15 +1,15 @@
 {
   "name": "vhd",
   "version": "0.2.0",
-  "license": "MIT",
   "description": "Microsoft's Virtual Hard Disk (VHD) Format",
+  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
+  "license": "MIT",
   "keywords": [
     "vhd",
     "virtual",
     "hard",
     "disk"
   ],
-  "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://github.com/jhermsmeier)",
   "main": "lib/vhd.js",
   "scripts": {
     "test": "mocha --ui=tdd"
