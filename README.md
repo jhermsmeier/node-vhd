@@ -20,6 +20,18 @@ From [Wikipedia's VHD article]
 $ npm install --save vhd
 ```
 
+## Index
+<!-- MarkdownTOC -->
+
+- [Types](#types)
+- [Limitations](#limitations)
+- [Usage](#usage)
+- [TODO](#todo)
+  - [General](#general)
+  - [Dynamic Images](#dynamic-images)
+  - [Fixed Images](#fixed-images)
+
+<!-- /MarkdownTOC -->
 
 ## Types
 
@@ -76,4 +88,28 @@ fixed.close( function( error ) {
   // ...
 })
 ```
+
+## TODO
+
+### General
+
+- [ ] Write tests
+- [ ] Add integration tests (with node-disk etc.)
+- [ ] Flesh out docs
+  - [ ] Generate API docs
+  - [ ] Complete VHD spec doc
+- [ ] Add runnable examples
+- [ ] Add PR & Issue templates (?)
+
+### Dynamic Images
+
+- [ ] Impl BlockDevice API
+  - [ ] Impl partitions
+- [ ] Impl cross-sector reads
+- [ ] Impl writes
+
+### Fixed Images
+
+- [ ] Impl BlockDevice API
+  - [ ] Impl partitions
 
