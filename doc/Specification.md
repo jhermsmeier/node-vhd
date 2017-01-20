@@ -525,40 +525,43 @@ The CHS is calculated based on the total data sectors present in the disk image.
 | sectorsPerTrack              | Sectors per track on the disk                |
 | cylinderTimesHead            | Cylinders x heads                            |
 
-```
-if (totalSectors > 65535 \* 16 \* 255)                        
-{
-totalSectors = 65535 \* 16 \* 255;                              
+```cpp
+                     C     H     S
+if( totalSectors > 65535 * 16 * 255 ) {
+  totalSectors = 65535 * 16 * 255;
 }
-if (totalSectors >= 65535 \* 16 \* 63)                        
-{
-sectorsPerTrack = 255;                                          
-heads = 16;                                                     
-cylinderTimesHeads = totalSectors / sectorsPerTrack;            
+
+if( totalSectors >= 65535 * 16 * 63 ) {
+  
+  sectorsPerTrack = 255;
+  heads = 16;
+  cylinderTimesHeads = totalSectors / sectorsPerTrack;
+  
+} else {
+   
+  sectorsPerTrack = 17; 
+  cylinderTimesHeads = totalSectors / sectorsPerTrack;
+  heads = ( cylinderTimesHeads + 1023 ) / 1024;
+    
+  if( heads < 4 ) {
+    heads = 4;
+  }
+
+  if( cylinderTimesHeads >= ( heads * 1024 ) || heads > 16 ) {
+    sectorsPerTrack = 31;
+    heads = 16;
+    cylinderTimesHeads = totalSectors / sectorsPerTrack;  
+  }
+
+  if( cylinderTimesHeads >= ( heads * 1024 ) ) {
+    sectorsPerTrack = 63;
+    heads = 16;
+    cylinderTimesHead = totalSectors / sectorsPerTrack;
+  }
+   
 }
-else                                                             
-{
-sectorsPerTrack = 17;                                           
-cylinderTimesHeads = totalSectors / sectorsPerTrack;            
-heads = (cylinderTimesHeads + 1023) / 1024;                     
-if (heads &lt; 4)                                               
-{
-heads = 4;                                                      
-}
-if (cylinderTimesHeads >= (heads \* 1024) || heads > 16)  
-{
-sectorsPerTrack = 31;                                           
-heads = 16;                                                     
-cylinderTimesHeads = totalSectors / sectorsPerTrack;            
-}
-if (cylinderTimesHeads >= (heads \* 1024))                   
-{
-sectorsPerTrack = 63;                                           
-heads = 16;                                                     
-cylinderTimesHead = totalSectors / sectorsPerTrack;             
-}
-}
-cylinders = cylinderTimesHead / heads;                           
+
+cylinders = cylinderTimesHead / heads;
 ```
 
 ### Checksum Calculation
@@ -570,7 +573,7 @@ cylinders = cylinderTimesHead / heads;
 | driveFooterSize                   | Size of the driveFooter structure           |
 | counter                           | Local counter                               |
 
-```
+```cpp
 checksum = 0;
 driveFooter.Checksum = 0;
 
