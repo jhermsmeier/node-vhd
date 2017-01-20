@@ -349,15 +349,15 @@ The following table describes the fields inside each locator entry.
 
 Some current platform codes include the following:
 
-| **Platform Code** | **Description**                                                                  |
-|:------------------|:---------------------------------------------------------------------------------|
-| None (0x0)        |                                                                                  |
-| Wi2r (0x57693272) | \[deprecated\]                                                                   |
-| Wi2k (0x5769326B) | \[deprecated\]                                                                   |
-| W2ru (0x57327275) | Unicode pathname (UTF-16) on Windows relative to the differencing disk pathname. |
-| W2ku (0x57326B75) | Absolute Unicode (UTF-16) pathname on Windows.                                   |
-| Mac (0x4D616320)  | (Mac OS alias stored as a blob)                                                  |
-| MacX(0x4D616358)  | A file URL with UTF-8 encoding conforming to RFC 2396.                           |
+| **Platform Code** | **Platform** | **Description**                                                                  |
+|:------------------|:-------------|:---------------------------------------------------------------------------------|
+| `0x00000000`      | None         |                                                                                  |
+| `0x57693272`      | Wi2r         | \[deprecated\]                                                                   |
+| `0x5769326B`      | Wi2k         | \[deprecated\]                                                                   |
+| `0x57327275`      | W2ru         | Unicode pathname (UTF-16) on Windows relative to the differencing disk pathname. |
+| `0x57326B75`      | W2ku         | Absolute Unicode (UTF-16) pathname on Windows.                                   |
+| `0x4D616320`      | Mac          | (Mac OS alias stored as a blob)                                                  |
+| `0x4D616358`      | MacX         | A file URL with UTF-8 encoding conforming to RFC 2396.                           |
 
 **Platform Data Space.** This field stores the number of 512-byte sectors needed to store the parent hard disk locator.
 
