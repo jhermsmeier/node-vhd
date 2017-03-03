@@ -1,0 +1,4 @@
+.*
+*.log
+*.vhd
+node_modules
