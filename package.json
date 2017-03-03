@@ -18,7 +18,6 @@
     "bloodline": "~1.0.1",
     "chs": "^1.1.0",
     "debug": "~2.6.1",
-    "fabl": "~1.0.1",
     "fastparallel": "~2.3.0",
     "fastseries": "~1.7.2"
   },
