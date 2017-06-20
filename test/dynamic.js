@@ -1,15 +1,8 @@
 var VHD = require( '..' )
 var assert = require( 'assert' )
 var path = require( 'path' )
-var util = require( 'util' )
 var Disk = require( 'disk' )
-
-function inspect( value ) {
-  return util.inspect( value, {
-    colors: true,
-    depth: null,
-  })
-}
+var inspect = require( './inspect' )
 
 suite( 'VHD.Dynamic', function() {
 
