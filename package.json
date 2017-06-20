@@ -24,8 +24,8 @@
     "fastseries": "~1.7.2"
   },
   "devDependencies": {
-    "disk": "~0.6.0",
-    "mocha": "~3.2.0"
+    "disk": "^0.7.0",
+    "mocha": "^3.4.2"
   },
   "repository": {
     "type": "git",
