@@ -16,8 +16,7 @@
   },
   "dependencies": {
     "bloodline": "~1.0.1",
-    "buffer-crc32": "~0.2.13",
-    "chs": "~1.0.0",
+    "chs": "^1.0.1",
     "debug": "~2.6.1",
     "fabl": "~1.0.1",
     "fastparallel": "~2.3.0",
