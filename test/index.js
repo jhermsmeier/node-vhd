@@ -3,7 +3,7 @@ var path = require( 'path' )
 var zlib = require( 'zlib' )
 var VHD = require( '..' )
 
-var images = [ 'dynamic.vhd' ]
+var images = [ 'dynamic.vhd', 'fixed.vhd' ]
 
 images.forEach( function( image ) {
   before( `decompress ${image}`, function( done ) {
