@@ -15,15 +15,15 @@
     "test": "mocha --ui=tdd"
   },
   "dependencies": {
-    "bloodline": "~1.0.1",
+    "bloodline": "^1.0.1",
     "chs": "^1.1.0",
-    "debug": "~2.6.1",
-    "fastparallel": "~2.3.0",
-    "fastseries": "~1.7.2"
+    "debug": "^3.1.0",
+    "fastparallel": "^2.3.0",
+    "fastseries": "^1.7.2"
   },
   "devDependencies": {
     "disk": "^0.7.0",
-    "mocha": "^3.4.2"
+    "mocha": "^4.0.1"
   },
   "repository": {
     "type": "git",
