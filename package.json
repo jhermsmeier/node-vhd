@@ -12,7 +12,7 @@
   ],
   "main": "lib/vhd.js",
   "scripts": {
-    "test": "mocha --ui=tdd",
+    "test": "mocha",
     "benchmark": "nanobench benchmark/*.js"
   },
   "dependencies": {

@@ -4,23 +4,23 @@ var path = require( 'path' )
 var Disk = require( 'disk' )
 var inspect = require( './inspect' )
 
-suite( 'VHD.Dynamic', function() {
+describe( 'VHD.Dynamic', function() {
 
   var filename = path.join( __dirname, 'data', 'dynamic.vhd' )
   var blockDevice = null
   var disk = null
 
-  test( 'init vhd', function() {
+  specify( 'init vhd', function() {
     blockDevice = new VHD.Dynamic({
       path: filename,
     })
   })
 
-  test( 'init disk', function() {
+  specify( 'init disk', function() {
     disk = new Disk( blockDevice )
   })
 
-  test( 'open disk', function( done ) {
+  specify( 'open disk', function( done ) {
     disk.open( function( error ) {
       // console.log( inspect( disk ) )
       assert.ok( disk.mbr, 'Missing MBR' )
@@ -31,7 +31,7 @@ suite( 'VHD.Dynamic', function() {
     })
   })
 
-  test( 'read partition (~32MB)', function( done ) {
+  specify( 'read partition (~32MB)', function( done ) {
     var part = disk.gpt.partitions[0]
     disk.device.readBlocks( part.firstLBA, part.lastLBA, function( error, buffer, bytesRead ) {
       assert.equal( disk.device.blockSize * (part.lastLBA - part.firstLBA), bytesRead, 'Bytes read mismatch' )
@@ -39,7 +39,7 @@ suite( 'VHD.Dynamic', function() {
     })
   })
 
-  test( 'close disk', function( done ) {
+  specify( 'close disk', function( done ) {
     disk.close( function( error ) {
       done( error )
     })
