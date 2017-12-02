@@ -24,6 +24,7 @@
   },
   "devDependencies": {
     "disk": "^0.7.0",
+    "hex": "^0.1.0",
     "mocha": "^4.0.1",
     "nanobench": "^2.1.0"
   },
