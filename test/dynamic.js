@@ -39,6 +39,25 @@ describe( 'VHD.Dynamic', function() {
     })
   })
 
+  specify( 'readStream', function( done ) {
+    blockDevice.createReadStream()
+      .on( 'error', done )
+      .on( 'end', done )
+      .resume()
+      // .on( 'data', function( chunk ) {
+      //   console.log( chunk.length, chunk )
+      // })
+  })
+
+  specify.skip( 'sparseReadStream', function( done ) {
+    blockDevice.createSparseReadStream()
+      .on( 'error', done )
+      .on( 'end', done )
+      .on( 'data', function( chunk ) {
+        console.log( chunk.length, chunk )
+      })
+  })
+
   specify( 'close disk', function( done ) {
     disk.close( function( error ) {
       done( error )
