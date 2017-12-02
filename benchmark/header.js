@@ -21,7 +21,7 @@ bench( `new VHD.Header() ⨉ ${ITERATIONS}`, function( run ) {
 
 bench.skip( `VHD.Header.parse( buffer ) ⨉ ${ITERATIONS}`, function( run ) {
 
-  var filename = path.join( __dirname, 'data', 'header.bin' )
+  var filename = path.join( __dirname, '..', 'test', 'data', 'header.bin' )
   var buffer = fs.readFileSync( filename )
   var footer = new VHD.Header()
 
@@ -37,7 +37,7 @@ bench.skip( `VHD.Header.parse( buffer ) ⨉ ${ITERATIONS}`, function( run ) {
 
 bench( `VHD.Header#parse( buffer ) ⨉ ${ITERATIONS}`, function( run ) {
 
-  var filename = path.join( __dirname, 'data', 'header.bin' )
+  var filename = path.join( __dirname, '..', 'test', 'data', 'header.bin' )
   var buffer = fs.readFileSync( filename )
   var footer = new VHD.Header()
 
@@ -53,7 +53,7 @@ bench( `VHD.Header#parse( buffer ) ⨉ ${ITERATIONS}`, function( run ) {
 
 bench( `VHD.Header#write( buffer ) ⨉ ${ITERATIONS}`, function( run ) {
 
-  var filename = path.join( __dirname, 'data', 'header.bin' )
+  var filename = path.join( __dirname, '..', 'test', 'data', 'header.bin' )
   var buffer = fs.readFileSync( filename )
   var footer = VHD.Header.parse( buffer )
   var copy = Buffer.alloc( VHD.Header.SIZE )
@@ -70,7 +70,7 @@ bench( `VHD.Header#write( buffer ) ⨉ ${ITERATIONS}`, function( run ) {
 
 bench( `VHD.Header#write() ⨉ ${ITERATIONS}`, function( run ) {
 
-  var filename = path.join( __dirname, 'data', 'header.bin' )
+  var filename = path.join( __dirname, '..', 'test', 'data', 'header.bin' )
   var buffer = fs.readFileSync( filename )
   var footer = VHD.Header.parse( buffer )
   var copy = Buffer.alloc( VHD.Header.SIZE )
