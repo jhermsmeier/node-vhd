@@ -12,7 +12,8 @@
   ],
   "main": "lib/vhd.js",
   "scripts": {
-    "test": "mocha --ui=tdd"
+    "test": "mocha --ui=tdd",
+    "benchmark": "nanobench benchmark/*.js"
   },
   "dependencies": {
     "bloodline": "^1.0.1",
@@ -23,7 +24,8 @@
   },
   "devDependencies": {
     "disk": "^0.7.0",
-    "mocha": "^4.0.1"
+    "mocha": "^4.0.1",
+    "nanobench": "^2.1.0"
   },
   "repository": {
     "type": "git",
