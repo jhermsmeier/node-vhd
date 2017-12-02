@@ -55,7 +55,7 @@ bench( `VHD.Footer#write( buffer ) ⨉ ${ITERATIONS}`, function( run ) {
 
   var filename = path.join( __dirname, 'data', 'footer.bin' )
   var buffer = fs.readFileSync( filename )
-  var footer = new VHD.Footer.parse( buffer )
+  var footer = VHD.Footer.parse( buffer )
   var copy = Buffer.alloc( VHD.Footer.SIZE )
 
   run.start()
@@ -72,7 +72,7 @@ bench( `VHD.Footer#write() ⨉ ${ITERATIONS}`, function( run ) {
 
   var filename = path.join( __dirname, 'data', 'footer.bin' )
   var buffer = fs.readFileSync( filename )
-  var footer = new VHD.Footer.parse( buffer )
+  var footer = VHD.Footer.parse( buffer )
   var copy = Buffer.alloc( VHD.Footer.SIZE )
 
   run.start()
