@@ -25,7 +25,7 @@ suite( 'VHD.Dynamic', function() {
       // console.log( inspect( disk ) )
       assert.ok( disk.mbr, 'Missing MBR' )
       assert.ok( disk.gpt, 'Missing GPT' )
-      assert.ok( disk.getEFIPart(), disk.mbr.partitions[0], 'EFI partition mismatch' )
+      assert.deepEqual( disk.getEFIPart(), disk.mbr.partitions[0], 'EFI partition mismatch' )
       assert.equal( disk.gpt.partitions.length, 4, 'Unexpected partition count' )
       done( error )
     })

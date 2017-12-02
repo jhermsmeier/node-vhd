@@ -24,15 +24,13 @@ suite( 'VHD.Fixed', function() {
     disk.open( function( error ) {
       // console.log( inspect( disk ) )
       assert.ok( disk.mbr, 'Missing MBR' )
-      assert.ok( disk.gpt, 'Missing GPT' )
-      assert.ok( disk.getEFIPart(), disk.mbr.partitions[0], 'EFI partition mismatch' )
-      assert.equal( disk.gpt.partitions.length, 4, 'Unexpected partition count' )
+      assert.equal( disk.mbr.partitions.length, 4, 'Unexpected partition count' )
       done( error )
     })
   })
 
   test( 'read partition (~32MB)', function( done ) {
-    var part = disk.gpt.partitions[0]
+    var part = disk.mbr.partitions[0]
     disk.device.readBlocks( part.firstLBA, part.lastLBA, function( error, buffer, bytesRead ) {
       assert.equal( disk.device.blockSize * (part.lastLBA - part.firstLBA), bytesRead, 'Bytes read mismatch' )
       done( error )
