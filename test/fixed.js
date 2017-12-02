@@ -37,6 +37,16 @@ describe( 'VHD.Fixed', function() {
     })
   })
 
+  specify( 'readStream', function( done ) {
+    blockDevice.createReadStream()
+      .on( 'error', done )
+      .on( 'end', done )
+      .resume()
+      // .on( 'data', function( chunk ) {
+      //   console.log( chunk.length, chunk )
+      // })
+  })
+
   specify( 'close disk', function( done ) {
     disk.close( function( error ) {
       done( error )
