@@ -40,11 +40,11 @@ describe( 'VHD.Fixed', function() {
   specify( 'readStream', function( done ) {
     blockDevice.createReadStream()
       .on( 'error', done )
-      .on( 'end', done )
+      .on( 'end', function() {
+        assert.equal( this.bytesRead, blockDevice.footer.currentSize )
+        done()
+      })
       .resume()
-      // .on( 'data', function( chunk ) {
-      //   console.log( chunk.length, chunk )
-      // })
   })
 
   specify( 'close disk', function( done ) {
