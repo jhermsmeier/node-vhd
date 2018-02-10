@@ -16,7 +16,6 @@
     "benchmark": "nanobench benchmark/*.js"
   },
   "dependencies": {
-    "bloodline": "^1.0.1",
     "chs": "^1.1.0",
     "debug": "^3.1.0",
     "fastparallel": "^2.3.0",
