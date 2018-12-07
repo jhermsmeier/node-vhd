@@ -17,14 +17,14 @@
   },
   "dependencies": {
     "chs": "^1.1.0",
-    "debug": "^3.1.0",
+    "debug": "^4.1.0",
     "fastparallel": "^2.3.0",
     "fastseries": "^1.7.2"
   },
   "devDependencies": {
     "disk": "^0.7.0",
     "hex": "^0.1.0",
-    "mocha": "^4.0.1",
+    "mocha": "^5.2.0",
     "nanobench": "^2.1.0"
   },
   "repository": {
