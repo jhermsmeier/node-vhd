@@ -4,20 +4,18 @@ var assert = require( 'assert' )
 var inspect = require( './inspect' )
 var VHD = require( '..' )
 
-function print( label, buffer ) {
-  var hex = require( 'hex' )
-  console.log( label )
-  console.log( '' )
-  hex( buffer )
-  console.log( '' )
-}
+// function print( label, buffer ) {
+//   var hex = require( 'hex' )
+//   console.log( label )
+//   console.log( '' )
+//   hex( buffer )
+//   console.log( '' )
+// }
 
 describe( 'VHD.Footer', function() {
 
   var filename = path.join( __dirname, 'data', 'footer.bin' )
   var buffer = fs.readFileSync( filename )
-
-  assert.equal( buffer.length, VHD.Footer.SIZE, 'Invalid header buffer size' )
 
   specify( '.parse()', function() {
 
@@ -33,7 +31,7 @@ describe( 'VHD.Footer', function() {
     assert.equal( footer.creatorHostOS, 1466511979 )
     assert.equal( footer.originalSize, 10485760 )
     assert.equal( footer.currentSize, 10485760 )
-    assert.deepEqual( footer.diskGeometry, { cylinder: 301, head: 4, sector: 17 } )
+    assert.deepEqual( footer.diskGeometry, { cylinders: 301, heads: 4, sectors: 17 } )
     assert.equal( footer.diskType, 2 )
     assert.equal( footer.checksum, 4294960592 )
     assert.equal( footer.uniqueId.toString('hex'), '71a5d438d9d5f44b8d26726a7e7ef18e' )
@@ -51,8 +49,8 @@ describe( 'VHD.Footer', function() {
     // print( 'expected', expected )
     // print( 'actual', actual )
 
-    assert.deepEqual( VHD.Footer.parse( expected ), VHD.Footer.parse( actual ) )
-    assert.deepEqual( expected, actual )
+    assert.deepEqual( VHD.Footer.parse( actual ), VHD.Footer.parse( expected ) )
+    assert.deepEqual( actual, expected )
 
   })
 
