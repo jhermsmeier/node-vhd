@@ -30,7 +30,9 @@ describe( 'VHD.Fixed', function() {
       if( error ) return done( error )
       var mbr = MBR.parse( buffer )
       var part = mbr.partitions[0]
-      image.readBlocks( part.firstLBA, part.lastLBA, function( error, bytesRead, buffer ) {
+      var length = VHD.BLOCK_SIZE * ( part.lastLBA - part.firstLBA )
+      var partBuffer = Buffer.alloc( length )
+      image.read( partBuffer, 0, length, part.firstLBA * VHD.BLOCK_SIZE, function( error, bytesRead, buffer ) {
         assert.equal( VHD.BLOCK_SIZE * ( part.lastLBA - part.firstLBA ), bytesRead, 'Bytes read mismatch' )
         done( error )
       })
