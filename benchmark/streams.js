@@ -3,7 +3,7 @@ var bench = require( 'nanobench' )
 var fs = require( 'fs' )
 var path = require( 'path' )
 
-bench( `VHD.Fixed.ReadStream`, function( run ) {
+bench.skip( `VHD.Fixed.ReadStream`, function( run ) {
 
   var filename = path.join( __dirname, '..', 'test', 'data', 'fixed.vhd' )
   var readStream = VHD.Fixed.createReadStream( filename )
@@ -17,7 +17,7 @@ bench( `VHD.Fixed.ReadStream`, function( run ) {
 
 })
 
-bench( `VHD.Dynamic.ReadStream`, function( run ) {
+bench.skip( `VHD.Dynamic.ReadStream`, function( run ) {
 
   var filename = path.join( __dirname, '..', 'test', 'data', 'dynamic.vhd' )
   var readStream = VHD.Dynamic.createReadStream( filename )
