@@ -9,15 +9,9 @@ describe( 'VHD.Fixed', function() {
   var filename = path.join( __dirname, 'data', 'fixed.vhd' )
   var image = null
 
-  specify( 'init vhd', function() {
-    image = new VHD.Image({
-      path: filename,
-    })
-  })
-
   specify( 'open image', function( done ) {
+    image = new VHD.Image({ path: filename })
     image.open( function( error ) {
-      // inspect.log( image )
       done( error )
     })
   })

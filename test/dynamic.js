@@ -9,13 +9,8 @@ describe( 'VHD.Dynamic', function() {
   var filename = path.join( __dirname, 'data', 'dynamic.vhd' )
   var image = null
 
-  specify( 'init vhd', function() {
-    image = new VHD.Image({
-      path: filename,
-    })
-  })
-
   specify( 'open image', function( done ) {
+    image = new VHD.Image({ path: filename })
     image.open( function( error ) {
       done( error )
     })
@@ -29,10 +24,18 @@ describe( 'VHD.Dynamic', function() {
       if( error ) return done( error )
       var mbr = MBR.parse( buffer )
       var part = mbr.partitions[0]
-      image.readBlocks( part.firstLBA, part.lastLBA, function( error, bytesRead, buffer ) {
-        assert.equal( VHD.BLOCK_SIZE * ( part.lastLBA - part.firstLBA ), bytesRead, 'Bytes read mismatch' )
+
+      var offset = 0
+      var length = 1 * ( 1024 ** 2 )
+      var position = part.firstLBA * VHD.BLOCK_SIZE
+      var buffer = Buffer.alloc( length )
+
+      image.read( buffer, offset, length, position, function( error, bytesRead, buffer ) {
+        if( error ) return done( error )
+        assert.equal( length, bytesRead, 'Bytes read mismatch' )
         done( error )
       })
+
     })
 
   })
@@ -41,7 +44,7 @@ describe( 'VHD.Dynamic', function() {
     image.createReadStream()
       .on( 'error', done )
       .on( 'end', function() {
-        assert.equal( this.bytesRead, image.footer.currentSize )
+        assert.equal( this.bytesRead, Number( image.footer.currentSize ) )
         done()
       })
       .resume()
