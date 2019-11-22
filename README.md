@@ -45,6 +45,14 @@ All virtual disk types have a minimum size of 3 MB.
 
 The VHD format has a built-in limitation of just under 2 TiB (2040 GiB) for the size of any dynamic or differencing VHDs. This is due to a sector offset table that only allows for the maximum of a 32-bit quantity - Which fits our JavaScript environment perfectly, since we can't work with 64 bit integers natively.
 
+### Memory Requirements
+
+For a maximum size dynamic or differencing VHD, the maximum Block Allocation Table size
+amounts to just under 4MB with the default sector size of 2MB (4096 512-byte blocks per sector)
+
+```js
+MAX_BAT_SIZE = ( tableEntries = ( diskSize / sectorSize )) * VHD.TABLE_ENTRY_SIZE
+```
 
 ## Usage
 
