@@ -1,8 +1,8 @@
 language: node_js
 node_js:
-  - stable
-  - "8"
-  - "6"
+  - latest
+  - "12"
+  - "10"
 script:
   - npm test
 notifications:
