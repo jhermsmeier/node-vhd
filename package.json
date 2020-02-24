@@ -1,6 +1,6 @@
 {
   "name": "vhd",
-  "version": "0.4.1",
+  "version": "0.5.0",
   "description": "Microsoft's Virtual Hard Disk (VHD) Format",
   "author": "Jonas Hermsmeier <jhermsmeier@gmail.com> (https://jhermsmeier.de)",
   "license": "MIT",
